@@ -27,6 +27,13 @@ class _CounterScreenState extends State<CounterScreen> {
       _counter = 0;
     });
   }
+  void _doubleButton(){
+    setState((){
+      if(_counter > 0){
+        _counter *= 2;
+      }
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +58,10 @@ class _CounterScreenState extends State<CounterScreen> {
                 ElevatedButton(onPressed: () {
                   _decrement();
                 }, child: Text('Subtract')),
+                SizedBox(width: 10),
+                ElevatedButton(onPressed: () {
+                  _doubleButton();
+                }, child: Text('Double')),
               ],
             ),
           ],
